@@ -16,6 +16,14 @@ import { CommonModule } from '@angular/common';
 })
 
 export class CrudComponent {
+
+  constructor(private localStorageService: LocalStorageService) {
+    this.items = JSON.parse(localStorage.getItem('items') || '[]');
+  }
+
+  items: any[] = [];
+  editingId: number | null = null;
+
   public formBuild = inject(FormBuilder);
   // el validator me estaba funcionando pero no se que paso
   // me toco validarlo 'rapido'
@@ -23,13 +31,7 @@ export class CrudComponent {
     name: ['', [Validators.required, Validators.minLength(3)]],
   });
 
-  items: any[] = [];
-  editingId: number | null = null;
-
-  constructor(private localStorageService: LocalStorageService) {
-    this.items = JSON.parse(localStorage.getItem('items') || '[]');
-  }
-
+  
   ngOnInit() {
     this.crudForm = this.formBuild.group({
       name: [''],
