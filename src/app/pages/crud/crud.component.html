@@ -1,0 +1,61 @@
+<section
+  class="contenedor-main"
+>
+  <div
+    class="card-main"
+  >
+    <div class="text-white">
+      <h2 class="text-2xl font-bold mb-4 text-center">CRUD</h2>
+      <form
+        [formGroup]="crudForm"
+        (ngSubmit)="editingId ? updateItem() : addItem()"
+        class="mb-4"
+      >
+        <div class="flex items-center space-x-2">
+          <input
+            type="text"
+            formControlName="name"
+            placeholder="Escribe un Item"
+            class="w-full px-3 py-2 border border-gray-300 rounded-xl focus:outline-none"
+          />
+          <button
+            type="submit"
+            class="btn-primary"
+          >
+            {{ editingId ? "Actualizar" : "Agregar" }}
+          </button>
+        </div>
+      </form>
+      <ul class="space-y-2 overflow-y-auto h-full scrollbar pr-2">
+        <li
+          *ngFor="let item of items"
+          class="flex justify-between items-center p-2 border border-gray-300 rounded-xl"
+        >
+          <span>{{ item.name }}</span>
+          <div class="space-x-2">
+            <button
+              (click)="editItem(item)"
+              class="btn-primary"
+            >
+              Editar
+            </button>
+            <button
+              (click)="deleteItem(item.id)"
+              class="btn-secondary"
+            >
+              Eliminar
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mt-4 flex gap-4 flex-col sm:flex-row">
+      <a href="/home"
+        class="flex w-full justify-center py-2 rounded-xl bg-emerald-700 border border-emerald-700 text-white font-medium shadow-xl hover:bg-white hover:text-black hover:border-zinc-300 transition-all duration-500 cursor-pointer"
+      >
+        Volver
+      </a>
+    </div>
+  </div>
+</section>

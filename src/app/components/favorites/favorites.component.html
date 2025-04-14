@@ -1,0 +1,38 @@
+<section
+  class="contenedor-main"
+>
+  <div
+    class="card-main"
+  >
+    <div class="text-white">
+      <h2 class="text-2xl font-bold mb-4 text-center">Mis Favoritos</h2>
+      <ul class="overflow-y-auto h-full scrollbar pr-2">
+        <li
+          *ngFor="let favorite of favorites"
+          class="flex flex-col sm:flex-row gap-2 justify-between items-center py-3 border-t border-gray-300"
+        >
+          <span class="text-xl capitalize font-medium">{{
+            favorite.name
+          }}</span>
+          <div class="flex gap-2 justify-center items-center">
+            <button
+              (click)="removeFavorite(favorite.name)"
+              class="btn-secondary"
+            >
+              Eliminar
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mt-4 flex gap-4 flex-col sm:flex-row">
+      <a
+        href="/home"
+        class="flex w-full justify-center py-2 rounded-xl bg-emerald-700 border border-emerald-700 text-white font-medium shadow-xl hover:bg-white hover:text-black hover:border-zinc-300 transition-all duration-500 cursor-pointer"
+      >
+        Volver
+      </a>
+    </div>
+  </div>
+</section>

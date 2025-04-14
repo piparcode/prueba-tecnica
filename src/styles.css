@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+.btn-primary {
+  @apply text-center px-4 py-2 rounded-xl text-white border border-white hover:bg-white hover:text-black transition-colors duration-500 cursor-pointer;
+}
+
+.btn-secondary {
+  @apply text-center px-4 py-2 rounded-xl bg-emerald-700 border border-emerald-700 text-white font-medium shadow-xl hover:bg-white hover:text-black hover:border-zinc-300 transition-all duration-500 cursor-pointer;
+}
+
+.contenedor-main {
+  @apply flex items-center justify-center h-screen px-4 sm:px-0 bg-[url(assets/fondoPokemon.webp)] bg-cover overflow-hidden
+}
+
+.card-main {
+  @apply w-full max-w-md overflow-hidden space-y-8 px-4 py-10 rounded-xl shadow-amber-600/40 shadow-2xl backdrop-blur-xl bg-zinc-950/60 border border-zinc-500 text-white
+}
+
+.scrollbar {
+  overflow-y: scroll;
+  height: 300px;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 10px; 
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #00bc7d;
+  border-radius: 5px; 
+}
+

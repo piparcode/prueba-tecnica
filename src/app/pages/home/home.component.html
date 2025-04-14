@@ -1,0 +1,24 @@
+<section
+  class="contenedor-main"
+>
+  <div
+    class="card-main"
+  >
+    <app-pokemon></app-pokemon>
+
+    <div class="mt-4 flex gap-4 flex-col sm:flex-row">
+      <a href="/crud"
+        class="btn-secondary w-full"
+      >
+        Ir al CRUD
+      </a>
+      <button
+        class="btn-secondary w-full"
+        type="submit"
+        (click)="logout()"
+      >
+        Cerrar Sesión
+      </button>
+    </div>
+  </div>
+</section>
