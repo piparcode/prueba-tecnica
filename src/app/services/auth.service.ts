@@ -16,7 +16,6 @@ export class AuthService {
   
   constructor() {}
 
-  // voy a quemar la api porque es un ejemplo
   login(objeto:Login): Observable<AuthService>{
     return this.http.post<AuthService>('https://prueba-tecnica-back-7jgj.onrender.com/login', objeto)
   }
