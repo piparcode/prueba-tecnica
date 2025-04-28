@@ -18,6 +18,6 @@ export class AuthService {
 
   // voy a quemar la api porque es un ejemplo
   login(objeto:Login): Observable<AuthService>{
-    return this.http.post<AuthService>('http://localhost:3000/login', objeto)
+    return this.http.post<AuthService>('https://prueba-tecnica-back-7jgj.onrender.com/login', objeto)
   }
 }
